@@ -1,0 +1,10 @@
+@import "fonts";
+@import "mixins/mixins";
+@import "ds-system/ds";
+@import "visually-hidden";
+@import "scaffolding";
+
+.card {
+  background-color: #00ffff;
+  filter: drop-shadow(0 0 0.2em #00ffff);
+}

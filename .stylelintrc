@@ -1,0 +1,29 @@
+{
+  "extends": [
+    "stylelint-config-htmlacademy",
+    "stylelint-config-clean-order",
+    "stylelint-config-recommended-scss",
+    "stylelint-config-recommended-vue/scss",
+    "stylelint-config-prettier"
+  ],
+  "plugins": [
+    "stylelint-no-unsupported-browser-features"
+  ],
+  "rules": {
+    "plugin/no-unsupported-browser-features": [true, {
+      "severity": "warning"
+    }],
+    "scss/double-slash-comment-whitespace-inside": "never",
+    "alpha-value-notation": "number",
+    "max-nesting-depth" : [
+      2,
+      {
+        "ignore": ["blockless-at-rules", "pseudo-classes"],
+        "ignorePseudoClasses": ["before", "after"],
+        "ignoreAtRules": ["media", "include"]
+      }
+    ],
+    "max-empty-lines": 1
+  }
+}
+

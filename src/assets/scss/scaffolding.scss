@@ -1,0 +1,43 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  user-select: none;
+
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+
+  font-family: "Open Sans", sans-serif;
+  color: $black;
+  text-rendering: optimizeLegibility;
+
+  background-color: $white;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:focus,
+a:active {
+  outline: 0;
+
+  -webkit-tap-highlight-color: rgb(0 0 0 / 0);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
