@@ -44,7 +44,7 @@
       "error",
       "always",
       {
-        "arraysInObjects": false,
+        "arraysInObjects": false
       }
     ],
     "quotes": [
@@ -55,7 +55,7 @@
       }
     ],
     "no-console": [
-      "warn",
+      "error",
       {
         "allow": ["warn", "error"]
       }

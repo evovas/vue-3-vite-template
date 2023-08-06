@@ -11,19 +11,23 @@
   ],
   "rules": {
     "plugin/no-unsupported-browser-features": [true, {
-      "severity": "warning"
+      "severity": "warning",
+      "ignore": ["css-masks", "css-appearance"]
     }],
     "scss/double-slash-comment-whitespace-inside": "never",
     "alpha-value-notation": "number",
     "max-nesting-depth" : [
-      2,
+      3,
       {
         "ignore": ["blockless-at-rules", "pseudo-classes"],
         "ignorePseudoClasses": ["before", "after"],
         "ignoreAtRules": ["media", "include"]
       }
     ],
-    "max-empty-lines": 1
+    "max-empty-lines": 1,
+    "selector-pseudo-class-no-unknown": [true, {
+      "ignorePseudoClasses": ["deep"]
+    }]
   }
 }
 
