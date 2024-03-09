@@ -6,8 +6,4 @@
   </main>
 </template>
 
-<script>
-export default {
-  name: 'AppLayoutMain',
-};
-</script>
+<script setup></script>

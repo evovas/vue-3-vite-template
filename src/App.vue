@@ -2,12 +2,6 @@
   <AppLayoutMain />
 </template>
 
-<script>
+<script setup>
 import AppLayoutMain from '/src/layouts/AppLayoutMain.vue';
-export default {
-  name: 'App',
-  components: {
-    AppLayoutMain,
-  },
-};
 </script>

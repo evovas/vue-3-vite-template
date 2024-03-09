@@ -2,17 +2,13 @@
   <button class="app-button">I'm button</button>
 </template>
 
-<script>
-export default {
-  name: 'AppButton',
-};
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
 .app-button {
   padding: 10px 20px;
 
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #ffffff;
 
   background-color: #00ffff;

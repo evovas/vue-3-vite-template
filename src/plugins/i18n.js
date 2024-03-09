@@ -1,21 +1,15 @@
+/* eslint-disable */
 import { createI18n } from 'vue-i18n';
-
-function loadLocaleMessages() {
-  const locales = import.meta.glob(`/src/locales/*.json`, { eager: true });
-  const messages = {};
-  Object.keys(locales).forEach((key) => {
-    const matched = key.match(/([A-Za-z0-9-_]+)\./i);
-    if (matched && matched.length > 1) {
-      const locale = matched[1];
-      messages[locale] = locales[key];
-    }
-  });
-  return messages;
-}
-
+import en_us from '/src/locales/en_us.json';
+import ja_jp from '/src/locales/ja_jp.json';
+import zh_hk from '/src/locales/zh_hk.json';
 export const i18n = createI18n({
-  allowComposition: true, // you need to specify that!
+  legacy: false,
   locale: 'en_us',
   fallbackLocale: 'en_us',
-  messages: loadLocaleMessages(),
+  messages: {
+    en_us,
+    ja_jp,
+    zh_hk,
+  },
 });

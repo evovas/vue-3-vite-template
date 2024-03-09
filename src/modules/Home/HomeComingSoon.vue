@@ -1,10 +1,6 @@
 <template>
-  <p>{{ $t('coming_soon') }}</p>
+  <p v-t="'coming_soon'" />
   <AppButton />
 </template>
 
-<script>
-export default {
-  name: 'HomeComingSoon',
-};
-</script>
+<script setup></script>

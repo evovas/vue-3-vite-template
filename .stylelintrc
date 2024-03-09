@@ -1,22 +1,23 @@
 {
   "extends": [
     "stylelint-config-htmlacademy",
-    "stylelint-config-clean-order",
-    "stylelint-config-recommended-scss",
-    "stylelint-config-recommended-vue/scss",
-    "stylelint-config-prettier"
+    "stylelint-config-standard-scss",
+    "stylelint-config-standard-vue/scss",
+    "stylelint-config-clean-order"
   ],
-  "plugins": [
-    "stylelint-no-unsupported-browser-features"
-  ],
+  "plugins": ["stylelint-no-unsupported-browser-features"],
   "rules": {
-    "plugin/no-unsupported-browser-features": [true, {
-      "severity": "warning",
-      "ignore": ["css-masks", "css-appearance"]
-    }],
+    "plugin/no-unsupported-browser-features": [
+      true,
+      {
+        "severity": "warning",
+        "ignorePartialSupport": true,
+        "ignore": ["css-masks", "css-appearance", "css-nesting", "css-media-range-syntax", "css-scrollbar", "css3-cursors-grab"]
+      }
+    ],
     "scss/double-slash-comment-whitespace-inside": "never",
     "alpha-value-notation": "number",
-    "max-nesting-depth" : [
+    "max-nesting-depth": [
       3,
       {
         "ignore": ["blockless-at-rules", "pseudo-classes"],
@@ -24,10 +25,12 @@
         "ignoreAtRules": ["media", "include"]
       }
     ],
-    "max-empty-lines": 1,
-    "selector-pseudo-class-no-unknown": [true, {
-      "ignorePseudoClasses": ["deep"]
+    "scss/at-rule-no-unknown": [true],
+    "selector-class-pattern": null,
+    "color-hex-length": "long",
+    "declaration-property-value-no-unknown": null,
+    "declaration-block-no-redundant-longhand-properties": [true, {
+      "ignoreShorthands": ["grid-template"]
     }]
   }
 }
-

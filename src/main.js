@@ -2,9 +2,8 @@ import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 import { router } from '/src/router';
 import { i18n } from '/src/plugins/i18n';
-
-import piniaPlugins from '/src/plugins/pinia-plugins.js';
-import useVuePlugins from '/src/plugins/vue-plugins.js';
+import dayjs from '/src/plugins/dayjs.js';
+import { VueQueryPlugin } from '@tanstack/vue-query';
 
 import App from '/src/App.vue';
 import AppButton from '/src/common/components/AppButton.vue';
@@ -14,10 +13,20 @@ const app = createApp(App);
 
 app.use(pinia).use(router).use(i18n);
 
-useVuePlugins(app);
+app.config.globalProperties.$dayjs = dayjs;
 
-pinia.use(piniaPlugins);
-
-app.mount('#app');
+app.use(VueQueryPlugin, {
+  queryClientConfig: {
+    defaultOptions: {
+      queries: {
+        refetchOnMount: false,
+        refetchOnWindowFocus: false,
+        refetchOnReconnect: false,
+      },
+    },
+  },
+});
 
 app.component('AppButton', AppButton);
+
+app.mount('#app');
